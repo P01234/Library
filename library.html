@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="library.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="mainHeader">
+        <nav>
+            <div id="libraryLogo"></div>
+            <h1 id="libraryTitle">Todo List for Books</h1>
+        </nav>
+    </header>
+    <section id="addBookArea">
+        <header id="addBookHeader">
+            <h2>Add New Book</h2>
+            <div id="OpenInputArea"></div>
+        </header>
+    </section>
+    <section>
+        <div id="inputArea">
+            <div id="inputAreaBorder">
+                <form action="post">
+                    <label for="Insert_B">Book's Name</label>
+                    <input class="Insert_B" type="text">
+                    <label for="Insert_A">Author's Name</label>
+                    <input class="Insert_A" type="text">
+                    <label for="Pages_N">Pages Number</label>
+                    <input type="text" class="Pages_N">
+                    <input type="button" id="ButtonConf">
+                </form>
+            </div>
+        </div>
+    </section>
+    <main id="bookArea">
+        <section id="showBookArea">
+
+        </section>
+    </main>
+    <footer id="infoAboutCreator">
+        <section>
+            <header>
+                <article>
+                    <h2>randomText</h2>
+                </article>
+            </header>
+        </section>
+    </footer>
+    <script src="library.js"></script>
+</body>
+</html>

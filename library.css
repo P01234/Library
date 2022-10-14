@@ -1,0 +1,40 @@
+*{
+    overflow-x:hidden;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#mainHeader{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:10px;
+    padding: 8px;
+    background-image: url(/images/university.jpg);
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:500px;
+    border-bottom:1.5px solid #000;
+}
+#mainHeader ::after{
+    opacity: 0.7;
+}
+#libraryLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/a.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height:160px;
+    width: 100%;
+    padding:10px;
+    cursor: pointer;
+
+}
