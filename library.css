@@ -8,27 +8,34 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #mainHeader{
+    position:relative;
     display:flex;
     justify-content: space-around;
     align-items: center;
     height: 60vh;
+    background-image: url(/images/university.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     width:100%;
     padding:8px;
+    z-index: 1;
 }
-#mainHeader h1{
-    color:thistle;
-    font-weight: 800;
-}
-#mainHeader::before{
-    content: "";
+#mainHeader::after {
     position: absolute;
+    display:flex;
+    content: "";
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    height: 60vh;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0,0,10, 0.63);
     z-index: -1;
+}
+
+#mainHeader h1{
+    color:#fff;
+    font-weight: 800;
 }
 #libraryLogo{
     display: flex;
@@ -40,7 +47,9 @@
     background-size: contain;
     height:160px;
     width: 100%;
-    padding:10px;
+    margin:0;
     cursor: pointer;
 
 }
+
+
