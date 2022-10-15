@@ -6,13 +6,22 @@
     box-sizing: border-box;
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation:all 1s;
+}
+@keyframes all{
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity:1;
+    }
 }
 #mainHeader{
     position:relative;
     display:flex;
     justify-content: space-around;
     align-items: center;
-    height: 60vh;
+    height: 100vh;
     background-image: url(/images/university.jpg);
     background-size:cover;
     background-position:center;
@@ -34,8 +43,10 @@
 }
 
 #mainHeader h1{
+    text-align: center;
     color:#fff;
     font-weight: 800;
+    font-size:70px;
 }
 #libraryLogo{
     display: flex;
@@ -47,9 +58,28 @@
     background-size: contain;
     height:160px;
     width: 100%;
-    margin:0;
+    padding:10px;
     cursor: pointer;
+    animation: topBottom 6s;
+    border-bottom:2px white solid;
 
 }
-
+@keyframes topBottom{
+    from{
+        left:0%;
+        right:0%;
+        padding: 200px;
+        border-bottom:solid 1px grey;
+    }
+    to{
+        padding:10px;
+        border-bottom:2px white solid;
+    }
+}
+#addBookArea{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
 
