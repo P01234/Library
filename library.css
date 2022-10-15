@@ -11,18 +11,24 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom:10px;
-    padding: 8px;
-    background-image: url(/images/university.jpg);
+    height: 60vh;
     width:100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height:500px;
-    border-bottom:1.5px solid #000;
+    padding:8px;
 }
-#mainHeader ::after{
-    opacity: 0.7;
+#mainHeader h1{
+    color:thistle;
+    font-weight: 800;
+}
+#mainHeader::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 60vh;
+    background-color: rgba(0,0,0,.8);
+    z-index: -1;
 }
 #libraryLogo{
     display: flex;
