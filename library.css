@@ -61,7 +61,7 @@
     padding:10px;
     cursor: pointer;
     animation: topBottom 6s;
-    border-bottom:2px white solid;
+    border: bottom 1px white solid;
 
 }
 @keyframes topBottom{
