@@ -1,8 +1,7 @@
 *{
     overflow-x:hidden;
     border: 0;
-    margin: 0;
-    padding: 0;
+    margin:0;
     box-sizing: border-box;
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -22,7 +21,7 @@
 #mainHeader{
     position:relative;
     display:flex;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
     height: 100vh;
     background-image: url(/images/university.jpg);
@@ -51,39 +50,45 @@
     text-align: center;
     color:#fff;
     font-weight: 800;
-    font-size:70px;
+    font-size:90px;
 
 }
-#libraryLogo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(/images/a.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height:160px;
-    width: 100%;
-    padding:10px;
-    cursor: pointer;
-    animation: topBottom 6s;
-    border: bottom 1px white solid;
-
-
-}
-@keyframes topBottom{
+@keyframes animation{
     from{
-        left:0%;
-        right:0%;
+        width: 500px;
         padding: 200px;
-        border-bottom:solid 1px grey;
 
     }
     to{
         padding:10px;
         border-bottom:2px white solid;
+        width:245px;
 
     }
+}
+#libraryLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:fit-content;
+    width:100%;
+    padding:10px;
+    margin:5px;
+
+/*this is wrong, the background image was supposed to be used only for backgrounds not content background. Use img instead. Its better
+ because you can have more precision defining the content.*/
+}
+/*Left and right are set to zero in order to centralize the icon/image. I also put a animation involving padding.*/
+#logoImage{
+    display:block;
+    height: fit-content;
+    width:245px;
+    margin:10px;
+    padding:10px;
+    cursor: pointer;
+    border-top:1px white solid;
+    border-bottom: 2px white solid;
+    animation: 5s animation;
 }
 #addBookArea{
     display:flex;
@@ -103,7 +108,7 @@
     padding:8px;
 
 }
-#addBookHeader h1{
+#addBookHeader > h1{
     display:flex;
     font-size: 20px;
     font-weight:500;
