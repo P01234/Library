@@ -18,23 +18,24 @@
     <section id="addBookArea">
         <header id="addBookHeader">
             <h2>Add New Book</h2>
-            <div id="OpenInputArea"><i class="fa fa-plus" style="font-size:24px"></i>
+            <div id="OpenInputArea"><button onclick=""><i class="fa fa-plus" style="font-size:24px"></i></button>
             </div>
         </header>
     </section>
     <section>
-        <div id="inputArea">
-            <div id="inputAreaBorder">
-                <form action="post">
-                    <label for="Insert_B">Book's Name</label>
-                    <input class="Insert_B" type="text">
-                    <label for="Insert_A">Author's Name</label>
-                    <input class="Insert_A" type="text">
-                    <label for="Pages_N">Pages Number</label>
-                    <input type="text" class="Pages_N">
-                    <input type="button" id="ButtonConf">
-                </form>
-            </div>
+        <div id="modal">
+            <form action="post" id="modalContent">
+                <caption><h2>Add Your Book! Increase Your Knowledge!</h2></caption>
+                <label for="Insert_B">Book's Name</label>
+                <input class="i" id="Insert_B" type="text">
+                <label for="Insert_A">Author</label>
+                <input class="i" id="Insert_A" type="text">
+                <label for="Pages_N">Number Of Pages</label>
+                <input class="i" type="text" id="Pages_N">
+                <input class="iButton" type="button" value="AddBook" id="ButtonConf">
+                <button class="times" ><i class="fa fa-times" aria-hidden="true"></i></button>
+
+            </form>
         </div>
     </section>
     <main>

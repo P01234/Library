@@ -135,18 +135,88 @@
     height:28px;
     width: 133px;
 }
-/*This'll become a modal. There is no need to worry about this one, atleast not yet.*/
-#inputArea{
-    display:none;
-}
+
 #bookArea{
     display:flex;
-    min-height: 300px;
-    height:600px;
+    min-height: 400px;
+    height: 500px;
     max-height:fit-content;
     justify-content:space-around;
     align-items: flex-start;
     
+}
+#modal{
+    display:flex;
+    flex-direction:row;
+    position:fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color:rgba(0,0,0,0.5);
+    animation: opacity 7s;
+}
+@keyframes opacity{
+    from{
+        background-color:rgba(255,255,255,1);
+        padding:30%;
+    }
+    to{
+        background-color:rgba(0,0,0,0.5);
+        padding:0;
+    }
+}
+#modalContent{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    background-color:beige;
+    margin: 15% auto ;
+    padding: 10%;
+    border: solid 1px #000;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow:0px 0px 100px #000  inset;
+    
+}
+#modalContent > h2{
+    border-bottom:2px solid #000;
+}
+#modalContent .i{
+    width: 310px;
+    margin:3px;
+    height:25px;
+    border:solid 0.5px #000;
+    border-radius: 5px;
+}
+.iButton{
+    margin:15px;
+    padding: 7px;
+    background-color: aqua;
+    border-radius: 5px;
+    width: 80px;
+    height: 38px;
+    color:black;
+}
+.iButton:hover{
+    height: 40px;
+    background-color:greenyellow;
+    color:black;
+    cursor:pointer;
+}
+#modalContent label{
+    margin: 3px;
+    padding:10px;
+}
+#modalContent > .times{
+    position:absolute;
+    right:2px;
+    top: 5px;
 }
 
 
