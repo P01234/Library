@@ -94,9 +94,9 @@
     display:flex;
     justify-content:space-around;
     align-items: center;
-    height: 700px;
+    height: 100px;
     margin-top:0;
-    background-color:bisque;
+    background-color:grey;
 
 }
 #addBookHeader{
@@ -120,14 +120,33 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    width:fit-content;
-    height:18px;
+    width:130px;
+    height:24px;
     overflow:hidden;
     margin-bottom:1.5%;
-    background-color:aqua;
+    background-color: rgba(0,0,0,0.5);
     margin:10px;
     cursor:pointer;
     border: 1px solid #000;
+    border-radius: 100px;
+    transition: 0.2s;
+}
+#OpenInputArea:hover{
+    height:28px;
+    width: 133px;
+}
+/*This'll become a modal. There is no need to worry about this one, atleast not yet.*/
+#inputArea{
+    display:none;
+}
+#bookArea{
+    display:flex;
+    min-height: 300px;
+    height:600px;
+    max-height:fit-content;
+    justify-content:space-around;
+    align-items: flex-start;
+    
 }
 
 
