@@ -18,13 +18,13 @@
     <section id="addBookArea">
         <header id="addBookHeader">
             <h2>Add New Book</h2>
-            <div id="OpenInputArea"><button onclick=""><i class="fa fa-plus" style="font-size:24px"></i></button>
+            <div id="OpenInputArea"><button><i class="fa fa-plus" style="font-size:20px" id="plus"></i></button>
             </div>
         </header>
     </section>
     <section>
         <div id="modal">
-            <form action="post" id="modalContent">
+            <form action="" id="modalContent">
                 <caption><h2>Add Your Book! Increase Your Knowledge!</h2></caption>
                 <label for="Insert_B">Book's Name</label>
                 <input class="i" id="Insert_B" type="text">
@@ -33,9 +33,9 @@
                 <label for="Pages_N">Number Of Pages</label>
                 <input class="i" type="text" id="Pages_N">
                 <input class="iButton" type="button" value="AddBook" id="ButtonConf">
-                <button class="times" ><i class="fa fa-times" aria-hidden="true"></i></button>
 
             </form>
+            <button class="times" >&times;</button>
         </div>
     </section>
     <main>
@@ -53,5 +53,6 @@
         </section>
     </footer>
     <script src="library.js"></script>
+    <script src="modal.js"></script>
 </body>
 </html>
