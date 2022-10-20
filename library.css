@@ -229,6 +229,23 @@
     width:40px;
     border-radius:100%;
 }
+#infoAbout{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+#imageGH{
+    height:30px;
+    width:35px;
+    padding:2px;
+    border: 1px #000 solid;
+    border-radius:100%;
+    background-color: rgb(222, 240, 255);
+    margin:5px;
+}
+#Wrap{
+    display:flex;
+}
 
 
 

@@ -4,12 +4,13 @@
 document.addEventListener("DOMContentLoaded", function(){
     //store all books in a simple array.
     //to store it take the input from users and add it to the array. It'll be stored in functions
+    //I'm going try adding the books inside a carousel. 
     let libraryStore = new Array();
 
     let createBook = function(){
 
     }
     let addBook = function(){
-        
+
     }
 })
