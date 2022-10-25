@@ -1,15 +1,15 @@
-let getModal = document.getElementById('modal');
-let btn = document.querySelector(".times");
-let startModal = document.getElementById('OpenInputArea');
-let openModal = function(){
-    startModal.addEventListener("click", () =>{
-        getModal.style.display = "flex";
-    })
+const getModal = document.getElementById('modal')
+const btn = document.querySelector('.times')
+const startModal = document.getElementById('OpenInputArea')
+const openModal = function () {
+  startModal.addEventListener('click', () => {
+    getModal.style.display = 'flex'
+  })
 }
- let closeModal = function(){
-    btn.addEventListener("click", () => {
-        getModal.style.display = "none";
-    })
+const closeModal = function () {
+  btn.addEventListener('click', () => {
+    getModal.style.display = 'none'
+  })
 }
 openModal()
 closeModal()

@@ -75,10 +75,9 @@
     padding:10px;
     margin:5px;
 
-/*this is wrong, the background image was supposed to be used only for backgrounds not content background. Use img instead. Its better
- because you can have more precision defining the content.*/
+
 }
-/*Left and right are set to zero in order to centralize the icon/image. I also put a animation involving padding.*/
+
 #logoImage{
     display:block;
     height: fit-content;
@@ -143,15 +142,23 @@
     width: 133px;
 }
 
-#bookArea{
+.bookArea{
     display:flex;
     min-height: 400px;
     height: 500px;
     max-height:fit-content;
     justify-content:space-around;
-    align-items: flex-start;
-    
+    align-items:baseline;
+    position:relative;
+    padding:5px;
+    margin:15px;
+
 }
+.bookArea > p{
+    font-size:20px;
+}
+
+/*This is the modal setup.*/
 #modal{
     display:none;
     flex-direction:row;
@@ -167,6 +174,8 @@
     background-color:rgba(0,0,0,0.5);
     animation: opacity 7s;
 }
+
+/*Modal Animation*/
 @keyframes opacity{
     from{
         background-color:rgba(255,255,255,1);
@@ -177,6 +186,8 @@
         padding:0;
     }
 }
+
+/*How the modal looks.*/
 #modalContent{
     display:flex;
     flex-direction: column;
@@ -245,6 +256,13 @@
 }
 #Wrap{
     display:flex;
+}
+.booksContainer{
+    display:flex;
+    height:100px;
+    background-color:aqua;
+    align-items:cente;
+    justify-content:space-around;
 }
 
 

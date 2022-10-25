@@ -1,16 +1,39 @@
+//this changes within context. 
+/*
+    In a method, this have the same scope of the method
+    This in the global is global *window*
+    In a function, a non strict one, this refers to global. 
+    But for strict, this returns undefined.
+    Inside a event, this refers to the element of the event.
+    Call(), Apply(), bind() can refer to this at any object.
+*/
 
-//code everyday, my friend. It's your way up.
-//This project is meant to use object oriented programming, althought not entirely
-document.addEventListener("DOMContentLoaded", function(){
-    //store all books in a simple array.
-    //to store it take the input from users and add it to the array. It'll be stored in functions
-    //I'm going try adding the books inside a carousel. 
-    let libraryStore = new Array();
-
-    let createBook = function(){
-
+    //  Create model class
+    let mainContainer = document.querySelector(".bookArea");
+    function Book(){
+        this.library = [];
     }
-    let addBook = function(){
-
+    //  Create methods
+    //  I'm not really sure if that is the most optimal way of doing it. Seems kinda bad to write, too much text for just a few things...
+    Book.prototype.createElementContainer = function()  {
+        this.containerCreator = document.createElement("section");
+        this.containerCreator.setAttribute("class","booksContainer");
+        mainContainer.appendChild(this.containerCreator);
+        mainContainer.classList.add("bookArea");
+        this.newContainer = document.querySelector(".booksContainer");
+        
     }
-})
+    Book.prototype.array_Library = function()   {
+        
+    }
+    Book.prototype.createTextAboutTheBook = function()  {
+        this.text = document.createElement("ṕ");
+        this.newContainer.appendChild(this.text);
+        this.newContainer.classList.add("booksContainer");
+        this.text.textContent = "This is my library";
+    }
+    
+
+    let libraryInfo = Object.create(Book.prototype);
+    libraryInfo.createElementContainer();
+    libraryInfo.createTextAboutTheBook();
