@@ -23,8 +23,16 @@
         this.newContainer = document.querySelector(".booksContainer");
         
     }
-    Book.prototype.array_Library = function()   {
-        
+    Book.prototype.checkButtonClick = function()    {
+        this.check = document.querySelector("#ButtonConf").addEventListener("click", () =>{
+            this.gotClick = true;
+            return this.array_Library(this.gotClick);
+        });//Only Run if all values match their required type.
+    }
+    Book.prototype.array_Library = function(click)   {
+        if(click === true){
+            //add the book to the array
+        }
     }
     Book.prototype.createTextAboutTheBook = function()  {
         this.text = document.createElement("ṕ");

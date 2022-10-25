@@ -95,6 +95,7 @@
     align-items: center;
     height: 100px;
     margin-top:0;
+    overflow:hidden;
     background-color:grey;
 
 }
