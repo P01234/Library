@@ -23,6 +23,34 @@
         this.newContainer = document.querySelector(".booksContainer");
         
     }
+
+    Book.prototype.getInputs = function()   {
+        this.book = document.querySelector("#Insert_B").value;
+        this.author = document.querySelector("#Insert_A").value;
+        this.pages = document.querySelector("#Insert_P").value;
+        return this.dealWInputs(this.pages);//  My naming ability is bad =/ Since books can be named as a number, i won't bother checking them.
+        //Works!
+    }
+
+    Book.prototype.dealWInputs = function(pages) {
+        //  Check pages.
+        if(typeof(pages) !== "number")  {
+            pages = parseInt(pages);
+            return this.pageChecker(pages);
+        }else{
+            return this.pageChecker(pages);
+        }
+    }
+    Book.prototype.pageChecker = function(pages)    {
+        if(pages < 1)   {
+            return this.createErrorWarning();
+        }else{
+            return this.checkButtonClick();
+        }
+    }
+    Book.prototype.createErrorWarning = function() {
+        alert("please, insert a number that's bigger than 0");
+    }
     Book.prototype.checkButtonClick = function()    {
         this.check = document.querySelector("#ButtonConf").addEventListener("click", () =>{
             this.gotClick = true;
@@ -31,6 +59,7 @@
     }
     Book.prototype.array_Library = function(click)   {
         if(click === true){
+            
             //add the book to the array
         }
     }
@@ -45,3 +74,7 @@
     let libraryInfo = Object.create(Book.prototype);
     libraryInfo.createElementContainer();
     libraryInfo.createTextAboutTheBook();
+    libraryInfo.getInputs();
+
+
+    //  Button click should've been activated before in order to properly evaluate the input.
