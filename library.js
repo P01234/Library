@@ -7,7 +7,7 @@
     Inside a event, this refers to the element of the event.
     Call(), Apply(), bind() can refer to this at any object.
 */
-
+    
     //  Create model class
     let mainContainer = document.querySelector(".bookArea");
     function Book(){
@@ -22,6 +22,28 @@
         mainContainer.classList.add("bookArea");
         this.newContainer = document.querySelector(".booksContainer");
         
+    }
+
+    Book.prototype.createTextAboutTheBook = function()  {
+        this.text = document.createElement("ṕ");
+        this.newContainer.appendChild(this.text);
+        this.newContainer.classList.add("booksContainer");
+        this.text.textContent = "This is my library";
+    }
+    
+
+    Book.prototype.checkButtonClick = function()    {
+        this.check = document.querySelector("#ButtonConf").addEventListener("click", () =>{
+            this.gotClick = true;
+            console.log("arroz")
+            return this.array_Library(this.gotClick);
+        });//Only Run if all values match their required type.
+    }
+    Book.prototype.array_Library = function(click)   {
+        if(click === true){
+            return this.getInputs();
+            //add the book to the array
+        }
     }
 
     Book.prototype.getInputs = function()   {
@@ -43,38 +65,21 @@
     }
     Book.prototype.pageChecker = function(pages)    {
         if(pages < 1)   {
+            console.log("pastel")
             return this.createErrorWarning();
-        }else{
-            return this.checkButtonClick();
+            
         }
     }
     Book.prototype.createErrorWarning = function() {
         alert("please, insert a number that's bigger than 0");
+
     }
-    Book.prototype.checkButtonClick = function()    {
-        this.check = document.querySelector("#ButtonConf").addEventListener("click", () =>{
-            this.gotClick = true;
-            return this.array_Library(this.gotClick);
-        });//Only Run if all values match their required type.
-    }
-    Book.prototype.array_Library = function(click)   {
-        if(click === true){
-            
-            //add the book to the array
-        }
-    }
-    Book.prototype.createTextAboutTheBook = function()  {
-        this.text = document.createElement("ṕ");
-        this.newContainer.appendChild(this.text);
-        this.newContainer.classList.add("booksContainer");
-        this.text.textContent = "This is my library";
-    }
-    
+
 
     let libraryInfo = Object.create(Book.prototype);
     libraryInfo.createElementContainer();
     libraryInfo.createTextAboutTheBook();
-    libraryInfo.getInputs();
+    libraryInfo.checkButtonClick();
 
 
     //  Button click should've been activated before in order to properly evaluate the input.
