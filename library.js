@@ -25,7 +25,7 @@
     }
 
     Book.prototype.createTextAboutTheBook = function()  {
-        this.text = document.createElement("ṕ");
+        this.text = document.createElement("p");
         this.newContainer.appendChild(this.text);
         this.newContainer.classList.add("booksContainer");
         this.text.textContent = "This is my library";
@@ -36,10 +36,10 @@
         this.check = document.querySelector("#ButtonConf").addEventListener("click", () =>{
             this.gotClick = true;
             console.log("arroz")
-            return this.array_Library(this.gotClick);
+            return this.checkAgain(this.gotClick);
         });//Only Run if all values match their required type.
     }
-    Book.prototype.array_Library = function(click)   {
+    Book.prototype.checkAgain = function(click)   {
         if(click === true){
             return this.getInputs();
             //add the book to the array
@@ -50,11 +50,11 @@
         this.book = document.querySelector("#Insert_B").value;
         this.author = document.querySelector("#Insert_A").value;
         this.pages = document.querySelector("#Insert_P").value;
-        return this.dealWInputs(this.pages);//  My naming ability is bad =/ Since books can be named as a number, i won't bother checking them.
+        return this.dealWInput(this.pages);//  My naming ability is bad =/ Since books can be named as a number, i won't bother checking them.
         //Works!
     }
 
-    Book.prototype.dealWInputs = function(pages) {
+    Book.prototype.dealWInput = function(pages) {
         //  Check pages.
         if(typeof(pages) !== "number")  {
             pages = parseInt(pages);
@@ -65,10 +65,25 @@
     }
     Book.prototype.pageChecker = function(pages)    {
         if(pages < 1)   {
-            console.log("pastel")
             return this.createErrorWarning();
             
+        }else{
+            return this.appendEverything();
         }
+    }
+    Book.prototype.appendEverything = function()    {
+        console.log("banana");
+        this.newParagraphBook = document.createElement("p");
+        this.newParagraphAuthor = document.createElement("p");
+        this.newParagraphPages = document.createElement("p");
+        console.log(typeof(this.newParagraphAuthor))
+        this.newContainer.appendChild(this.newParagraphBook);
+        this.newContainer.appendChild(this.newParagraphAuthor);
+        this.newContainer.appendChild(this.newParagraphPages);
+        this.newContainer.classList.add("booksContainer");
+        this.newParagraphBook += `${this.book}`;
+        this.newParagraphAuthor += `${this.author}`;
+        this.newParagraphPages += `${this.pages}`;
     }
     Book.prototype.createErrorWarning = function() {
         alert("please, insert a number that's bigger than 0");
