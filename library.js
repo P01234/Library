@@ -11,7 +11,7 @@
     //  Create model class
     let mainContainer = document.querySelector(".bookArea");
     function Book(){
-        this.library = [];
+        
     }
     //  Create methods
     //  I'm not really sure if that is the most optimal way of doing it. Seems kinda bad to write, too much text for just a few things...
@@ -76,10 +76,10 @@
         this.newParagraphBook = document.createElement("p");
         this.newParagraphAuthor = document.createElement("p");
         this.newParagraphPages = document.createElement("p");
-        return insertArray(this.newParagraphBook, this.newParagraphAuthor, this.newParagraphPages);
+        return this.putIntoArray(this.newParagraphBook, this.newParagraphAuthor, this.newParagraphPages);
     }
     //  Get all inputs and insert them into a array
-    Book.prototype.insertArray = function(firstInput, secondInput, thirdInput)   {
+    Book.prototype.putIntoArray = function(firstInput, secondInput, thirdInput)   {
         //  Create a loop creating a book for array index. I think i did something really wrong here XD
         //  Need to be careful to not surpass the array limit, since Javascript don't check it.
         /*
@@ -91,6 +91,8 @@
             this.newParagraphAuthor.textContent = `${this.author}\n`;
             this.newParagraphPages.textContent = `${this.pages}\n`;
         */
+
+            //  I think i can add more parameters to forEach, that might solve the index problem.
         
     }
 
