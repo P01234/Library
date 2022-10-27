@@ -149,7 +149,7 @@
     height: 500px;
     max-height:fit-content;
     justify-content:space-around;
-    align-items:baseline;
+    align-items:center;
     position:relative;
     padding:5px;
     margin:15px;
@@ -260,10 +260,25 @@
 }
 .booksContainer{
     display:flex;
-    height:100px;
+    flex-direction: column;
+    height:fit-content;
+    height:300px;
+
+    border:#000 2px solid;
     background-color:aqua;
     align-items:center;
+    margin:10px;
+    padding:5px;
     justify-content:space-around;
+}
+.booksContainer > h2{
+    font-size:25px;
+    font-weight: 400;
+
+}
+.booksContainer > p{
+    font-size:20px;
+    border-top:1px #000 solid
 }
 
 

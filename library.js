@@ -25,7 +25,7 @@
     }
 
     Book.prototype.createTextAboutTheBook = function()  {
-        this.text = document.createElement("p");
+        this.text = document.createElement("h2");
         this.newContainer.appendChild(this.text);
         this.newContainer.classList.add("booksContainer");
         this.text.textContent = "This is my library";
@@ -71,20 +71,29 @@
             return this.appendEverything();
         }
     }
+
     Book.prototype.appendEverything = function()    {
-        console.log("banana");
         this.newParagraphBook = document.createElement("p");
         this.newParagraphAuthor = document.createElement("p");
         this.newParagraphPages = document.createElement("p");
-        console.log(typeof(this.newParagraphAuthor))
-        this.newContainer.appendChild(this.newParagraphBook);
-        this.newContainer.appendChild(this.newParagraphAuthor);
-        this.newContainer.appendChild(this.newParagraphPages);
-        this.newContainer.classList.add("booksContainer");
-        this.newParagraphBook += `${this.book}`;
-        this.newParagraphAuthor += `${this.author}`;
-        this.newParagraphPages += `${this.pages}`;
+        return insertArray(this.newParagraphBook, this.newParagraphAuthor, this.newParagraphPages);
     }
+    //  Get all inputs and insert them into a array
+    Book.prototype.insertArray = function(firstInput, secondInput, thirdInput)   {
+        //  Create a loop creating a book for array index. I think i did something really wrong here XD
+        //  Need to be careful to not surpass the array limit, since Javascript don't check it.
+        /*
+             this.newContainer.appendChild(this.newParagraphBook);
+            this.newContainer.appendChild(this.newParagraphAuthor);
+            this.newContainer.appendChild(this.newParagraphPages);
+            this.newContainer.classList.add("booksContainer");
+            this.newParagraphBook.textContent = `${this.book}\n`;
+            this.newParagraphAuthor.textContent = `${this.author}\n`;
+            this.newParagraphPages.textContent = `${this.pages}\n`;
+        */
+        
+    }
+
     Book.prototype.createErrorWarning = function() {
         alert("please, insert a number that's bigger than 0");
 
