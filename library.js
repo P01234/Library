@@ -35,7 +35,6 @@
     Book.prototype.checkButtonClick = function()    {
         this.check = document.querySelector("#ButtonConf").addEventListener("click", () =>{
             this.gotClick = true;
-            console.log("arroz")
             return this.checkAgain(this.gotClick);
         });//Only Run if all values match their required type.
     }
@@ -50,8 +49,10 @@
         this.book = document.querySelector("#Insert_B").value;
         this.author = document.querySelector("#Insert_A").value;
         this.pages = document.querySelector("#Insert_P").value;
-        return this.dealWInput(this.pages);//  My naming ability is bad =/ Since books can be named as a number, i won't bother checking them.
-        //Works!
+        if(this.book == "" || this.author == "" || this.pages == "" ){
+            return alert("Please, add a value to all inputs"); //   In order to avoid empty inputs as it could lead to a weird looking page.
+        }
+        return this.dealWInput(this.pages);//  Since books can be named as a number, i won't bother checking them.
     }
 
     Book.prototype.dealWInput = function(pages) {
@@ -76,31 +77,30 @@
         this.newParagraphBook = document.createElement("p");
         this.newParagraphAuthor = document.createElement("p");
         this.newParagraphPages = document.createElement("p");
-        return this.putIntoArray(this.newParagraphBook, this.newParagraphAuthor, this.newParagraphPages);
-    }
-    //  Get all inputs and insert them into a array
-    Book.prototype.putIntoArray = function(firstInput, secondInput, thirdInput)   {
-        //  Create a loop creating a book for array index. I think i did something really wrong here XD
-        //  Need to be careful to not surpass the array limit, since Javascript don't check it.
-        /*
-             this.newContainer.appendChild(this.newParagraphBook);
-            this.newContainer.appendChild(this.newParagraphAuthor);
-            this.newContainer.appendChild(this.newParagraphPages);
-            this.newContainer.classList.add("booksContainer");
-            this.newParagraphBook.textContent = `${this.book}\n`;
-            this.newParagraphAuthor.textContent = `${this.author}\n`;
-            this.newParagraphPages.textContent = `${this.pages}\n`;
-        */
-
-            //  I think i can add more parameters to forEach, that might solve the index problem.
+        this.newContainer.appendChild(this.newParagraphBook);
+        this.newContainer.appendChild(this.newParagraphAuthor);
+        this.newContainer.appendChild(this.newParagraphPages);
+        this.newContainer.classList.add("booksContainer");
+        this.newParagraphBook.textContent = `${this.book}\n`;
+        this.newParagraphAuthor.textContent = `${this.author}\n`;
+        this.newParagraphPages.textContent = `${this.pages}\n`;
+        return this.saveBookInLibrary(); 
+       }// Kinda big =/ 
+       
+    Book.prototype.saveBookInLibrary = function()   {
         
+        let libraryStore = [
+            this.newParagraphBook.textContent,
+            this.newParagraphAuthor.textContent,
+            this.newParagraphPages.textContent,
+        ];
+        console.log(libraryStore);
     }
 
     Book.prototype.createErrorWarning = function() {
         alert("please, insert a number that's bigger than 0");
 
     }
-
 
     let libraryInfo = Object.create(Book.prototype);
     libraryInfo.createElementContainer();
