@@ -74,11 +74,15 @@
     }
     Book.prototype.displayAll = function()    {
             this.newParagraphBook = document.createElement("p");
+            this.checkRead = document.createElement("button");
+            this.checkRead.innerHTML = "read?";
+            this.checkRead.setAttribute("class","bookChecker");
             this.newParagraphAuthor = document.createElement("p");
             this.newParagraphPages = document.createElement("p");
             this.newContainer = document.createElement("section");
             this.newContainer.setAttribute("class", "bookContainer");
             mainContainer.appendChild(this.newContainer);
+            this.newContainer.appendChild(this.checkRead);
             this.newContainer.appendChild(this.newParagraphBook);
             this.newContainer.appendChild(this.newParagraphAuthor);
             this.newContainer.appendChild(this.newParagraphPages);
@@ -86,6 +90,14 @@
             this.newParagraphBook.textContent = `${this.book}\n`;
             this.newParagraphAuthor.textContent = `${this.author}\n`;
             this.newParagraphPages.textContent = `${this.pages}\n`;
+            return this.checkIfRead();
+    }
+    Book.prototype.checkIfRead = function()  {
+        this.checkRead.addEventListener("click", () =>{
+            this.newText = document.createElement("p");
+            this.newContainer.appendChild(this.newText);
+            this.newText.textContent = "read";
+        });
     }
 
     let libraryInfo = Object.create(Book.prototype);
