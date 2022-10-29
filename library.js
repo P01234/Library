@@ -72,19 +72,7 @@
         bookWipe =  "";
         return this.book = bookWipe;
     }
-
-    let libraryInfo = Object.create(Book.prototype);
-    libraryInfo.checkButtonClick();
-    function saveBookInLibrary(book,author,pages)    {
-        let libraryStore = [];
-        let i = 0;
-        libraryStore[i];
-        libraryStore.push(book,author,pages);
-
-        if(libraryStore.length <= 0)    {
-            return alert("The array is empty");
-        }else   {
-            while(libraryStore.length % 3 == 0 ){
+    Book.prototype.displayAll = function()    {
             this.newParagraphBook = document.createElement("p");
             this.newParagraphAuthor = document.createElement("p");
             this.newParagraphPages = document.createElement("p");
@@ -95,12 +83,22 @@
             this.newContainer.appendChild(this.newParagraphAuthor);
             this.newContainer.appendChild(this.newParagraphPages);
             this.newContainer.classList.add("booksContainer");
-            this.newParagraphBook.textContent = `${book}\n`;
-            this.newParagraphAuthor.textContent = `${author}\n`;
-            this.newParagraphPages.textContent = `${pages}\n`;
-            i++;
-            break;
-            }
-            console.log(libraryStore)
+            this.newParagraphBook.textContent = `${this.book}\n`;
+            this.newParagraphAuthor.textContent = `${this.author}\n`;
+            this.newParagraphPages.textContent = `${this.pages}\n`;
+    }
+
+    let libraryInfo = Object.create(Book.prototype);
+    let libraryStore = [];
+    libraryInfo.checkButtonClick();
+    function saveBookInLibrary(book,author,pages)    {
+        let i = 0;
+        libraryStore[i];
+        libraryStore.push(book,author,pages);
+
+        if(libraryStore.length <= 0)    {
+            return alert("The array is empty");
+        }else   {
+            return libraryInfo.displayAll();
         }
     }    
