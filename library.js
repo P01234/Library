@@ -9,7 +9,6 @@
 */
     
     //  Create model class
-    let mainContainer = document.querySelector(".bookArea");
     function Book(){
         
     }
@@ -59,7 +58,7 @@
         }
     }
     Book.prototype.sendBook_To_Library = function(newBook, newAuthor, newPages)    {
-        return saveBookInLibrary(newBook, newAuthor, newPages);
+        return saveBookInLibrary();
     }
        
 
@@ -68,49 +67,48 @@
         
     }
     
-    Book.prototype.wipeBookData = function(bookWipe)    {
-        bookWipe =  "";
-        return this.book = bookWipe;
-    }
-    Book.prototype.displayAll = function()    {
-            this.newParagraphBook = document.createElement("p");
-            this.checkRead = document.createElement("button");
-            this.checkRead.innerHTML = "read?";
-            this.checkRead.setAttribute("class","bookChecker");
-            this.newParagraphAuthor = document.createElement("p");
-            this.newParagraphPages = document.createElement("p");
-            this.newContainer = document.createElement("section");
-            this.newContainer.setAttribute("class", "bookContainer");
-            mainContainer.appendChild(this.newContainer);
-            this.newContainer.appendChild(this.checkRead);
-            this.newContainer.appendChild(this.newParagraphBook);
-            this.newContainer.appendChild(this.newParagraphAuthor);
-            this.newContainer.appendChild(this.newParagraphPages);
-            this.newContainer.classList.add("booksContainer");
-            this.newParagraphBook.textContent = `${this.book}\n`;
-            this.newParagraphAuthor.textContent = `${this.author}\n`;
-            this.newParagraphPages.textContent = `${this.pages}\n`;
-            return this.checkIfRead();
-    }
-    Book.prototype.checkIfRead = function()  {
-        this.checkRead.addEventListener("click", () =>{
-            this.newText = document.createElement("p");
-            this.newContainer.appendChild(this.newText);
-            this.newText.textContent = "read";
-        });
-    }
+    
+    
+    
 
     let libraryInfo = Object.create(Book.prototype);
     let libraryStore = [];
+    let container = document.querySelector(".bookArea");
+    //libraryStore = Object.create(Book.prototype);
     libraryInfo.checkButtonClick();
-    function saveBookInLibrary(book,author,pages)    {
-        let i = 0;
-        libraryStore[i];
-        libraryStore.push(book,author,pages);
+    let i = 0;
 
-        if(libraryStore.length <= 0)    {
-            return alert("The array is empty");
-        }else   {
-            return libraryInfo.displayAll();
-        }
+    function saveBookInLibrary()    {
+        libraryStore[i] = libraryInfo;
+        
+        return displayAllArrayContent();
+        
+        
+    }
+    function displayAllArrayContent()   {
+        
+        /*
+            'beforebegin': before the element
+            'afterbegin': before its first child of the element.
+            'beforeend': after the last child of the element
+            'afterend': after the element
+        */
+       //   So it'll be added before the 1st child
+        container.insertAdjacentHTML("afterbegin",
+        `<div data-index${ i} class="newBooks" >
+        <p class="bookContainer">${libraryStore[i].book}</p>
+        <p class="bookContainer">${libraryStore[i].author}</p>
+        <p class="bookContainer">${libraryStore[i].pages}</p>
+        <label>
+        <input type="checkbox" class="checkBox">
+        <input type="button" value="Delete Book" class="deleteButton" onclick="deleteBook();">
+        </label>`
+        )
+        console.log(libraryStore)
+        i++;
     }    
+    function deleteBook()   {
+        let dataHold = document.querySelectorAll(".newBooks");
+        console.log(dataHold.)
+    }
+    

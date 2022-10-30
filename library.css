@@ -146,7 +146,7 @@
 .bookArea{
     display:flex;
     min-height: 400px;
-    height: 500px;
+    height: 600px;
     max-height:fit-content;
     justify-content:space-around;
     align-items:center;
@@ -264,32 +264,21 @@
     justify-content: center;
     color:#fff;
 }
-.booksContainer{
+.newBooks{
     display:flex;
-    flex-direction: column;
-    min-height:fit-content;
-    height:300px;
+    justify-content: space-around;
+    width:200px;
     min-width:fit-content;
-    width:13%;
-    border:#000 2px solid;
-    background-color:aqua;
-    align-items:center;
+    height:300px;
+    align-items: center;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+.bookContainer{
+    display:flex;
     margin:10px;
-    padding:5px;
-    justify-content:space-around;
-}
-.booksContainer > h2{
-    font-size:25px;
-    font-weight: 400;
-
-}
-.booksContainer > p{
-    font-size:20px;
-    border-top:1px #000 solid
-}
-.bookChecker{
-    width:50px;
-    height:50px;
+    background-color:aqua;
+    justify-content: space-around;
 }
 
 
