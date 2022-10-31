@@ -54,11 +54,8 @@
             return this.createErrorWarning();
             
         }else{
-            return this.sendBook_To_Library(this.newBook, this.newAuthor, this.newPages);
+            return saveBookInLibrary();
         }
-    }
-    Book.prototype.sendBook_To_Library = function(newBook, newAuthor, newPages)    {
-        return saveBookInLibrary();
     }
        
 
@@ -109,6 +106,6 @@
     }    
     function deleteBook()   {
         let dataHold = document.querySelectorAll(".newBooks");
-        console.log(dataHold.)
+        console.log(dataHold)
     }
     
