@@ -12,7 +12,7 @@
     function Book(){
         
     }
-    // Class that will check if the addBook button on my page form got clicked =)
+    // Class that will check if the addBook button on my page form got clicked. =)
     Book.prototype.checkButtonClick = function()    {
         this.check = document.querySelector("#ButtonConf").addEventListener("click", () =>{
             this.gotClick = true;
@@ -94,7 +94,7 @@
             'beforeend': after the last child of the element
             'afterend': after the element
         */
-       
+
        //   So it'll be added before the 1st child
         container.insertAdjacentHTML("afterbegin",
         `<div data-index=${i} class="newBooks" >
