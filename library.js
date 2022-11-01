@@ -73,7 +73,6 @@
     let container = document.querySelector(".bookArea");
     //libraryStore = Object.create(Book.prototype);
     libraryInfo.checkButtonClick();
-    prepareDeleteBook();
     let i = 0;
 
     function saveBookInLibrary()    {
@@ -83,6 +82,7 @@
         
         
     }
+    
     function displayAllArrayContent()   {
         
         /*
@@ -93,27 +93,24 @@
         */
        //   So it'll be added before the 1st child
         container.insertAdjacentHTML("afterbegin",
-        `<div data-index${ i} class="newBooks" >
+        `<div data-index=${i} class="newBooks" >
         <p class="bookContainer">${libraryStore[i].book}</p>
         <p class="bookContainer">${libraryStore[i].author}</p>
         <p class="bookContainer">${libraryStore[i].pages}</p>
-        <label>
+        <label class="checkBox">
         <input type="checkbox" class="checkBox">
-        <input type="button" value="Delete Book" class="deleteButton" >
-        </label>`
+        </label>
+        <input type="button" value="Delete Book" class="deleteButton" onclick="prepareDeleteBook(this)">`
+
         
         )
         console.log(libraryStore)
         i++;
     }    
-    function prepareDeleteBook()   {
-        let buttonDelete = document.querySelector(".deleteButton");
-        container.querySelectorAll("data-index").forEach(item =>{
-            buttonDelete.addEventListener("click", (item) =>{ 
-            delete(item.target)
-        });
-        })
-
-        }
+    function prepareDeleteBook(e)   {
+        delete libraryStore[e.parentElement.dataset.index]
+        e.parentElement.remove();
+        
+    }
    
     
