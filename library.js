@@ -8,7 +8,7 @@
     Call(), Apply(), bind() can refer to this at any object.
 */
     
-    //  Create model class
+    //  Create model class.
     function Book(){
         
     }
