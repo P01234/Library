@@ -266,13 +266,23 @@
 }
 .newBooks{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width:200px;
     min-width:fit-content;
     height:300px;
     align-items: center;
     flex-direction: column;
     background-color: aquamarine;
+}
+.checkBox{
+    display:flex;
+    justify-content: space-around;
+    width:10px;
+    min-width:fit-content;
+    height:100px;
+    overflow:auto;
+    align-items: center;
+    flex-direction: column;
 }
 .bookContainer{
     display:flex;
