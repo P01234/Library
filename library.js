@@ -73,6 +73,7 @@
     let container = document.querySelector(".bookArea");
     //libraryStore = Object.create(Book.prototype);
     libraryInfo.checkButtonClick();
+    prepareDeleteBook();
     let i = 0;
 
     function saveBookInLibrary()    {
@@ -98,14 +99,21 @@
         <p class="bookContainer">${libraryStore[i].pages}</p>
         <label>
         <input type="checkbox" class="checkBox">
-        <input type="button" value="Delete Book" class="deleteButton" onclick="deleteBook();">
+        <input type="button" value="Delete Book" class="deleteButton" >
         </label>`
+        
         )
         console.log(libraryStore)
         i++;
     }    
-    function deleteBook()   {
-        let dataHold = document.querySelectorAll(".newBooks");
-        console.log(dataHold)
-    }
+    function prepareDeleteBook()   {
+        let buttonDelete = document.querySelector(".deleteButton");
+        container.querySelectorAll("data-index").forEach(item =>{
+            buttonDelete.addEventListener("click", (item) =>{ 
+            delete(item.target)
+        });
+        })
+
+        }
+   
     
