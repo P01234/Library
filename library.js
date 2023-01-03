@@ -121,9 +121,8 @@
         e.parentElement.remove();
         
     }
+    prepareDeleteBook();
     /*
         Overall, this was my first OOP project, it was somewhat difficult despite not've used all OOP concepts. Took me a couple of weeks
         to figure out how classes, this and how to add that delete functionality, it was tought but also a fun project to create. 
     */
-   
-    
